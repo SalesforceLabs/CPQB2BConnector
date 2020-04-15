@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>B2B_Storefront__c</fullName>
+        <defaultValue>&quot;DefaultStore&quot;</defaultValue>
+        <description>Identifies which Storefront(s) value(s) to assign to the related B2B (CC Product) during the synchronization process.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Multiple values must be separated by a semi-colon, i.e.( Storefront1;Storefront2;Storefront3)</inlineHelpText>
+        <label>B2B Storefront</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sync_Product_To_B2B__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checkbox used to determine if product2 record will be synced to B2B. Set to true for record to sync to B2B.</description>
+        <externalId>false</externalId>
+        <label>Sync Product To B2B</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+</CustomObject>

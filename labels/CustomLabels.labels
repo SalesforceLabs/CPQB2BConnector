@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>CPQB2B_CartToQuote_Additional_Details_Msg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQB2B CartToQuote Additional Details Message</shortDescription>
+        <value>Please add any additional details you may want us to know before providing a quote, such as quantity, shipping/packaging changes or similar products. For additional information, please contact Customer Service.</value>
+    </labels>
+    <labels>
+        <fullName>CPQB2B_CartToQuote_Additional_Details_TextArea_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQB2B CartToQuote Additional Details TextArea Label</shortDescription>
+        <value>Additional Details</value>
+    </labels>
+    <labels>
+        <fullName>CPQB2B_CartToQuote_Confirm_Msg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQB2B CartToQuote Confirmation Message</shortDescription>
+        <value>Once a quote has been requested requested, your cart will no longer be available to place an order. Are you sure you want to request a quote? Click confirm to proceed, otherwise click cancel to go back to your cart.</value>
+    </labels>
+    <labels>
+        <fullName>CPQB2B_CartToQuote_Details_Modal_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQB2B CartToQuote Details Modal Title</shortDescription>
+        <value>Submit Request For Quote</value>
+    </labels>
+    <labels>
+        <fullName>CPQB2B_CartToQuote_Error_Modal_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQB2B CartToQuote Error Modal Title</shortDescription>
+        <value>Error</value>
+    </labels>
+    <labels>
+        <fullName>CPQB2B_CartToQuote_Error_Msg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQB2B CartToQuote Error Message</shortDescription>
+        <value>An error occurred while attempting to generate a quote.  Please contact a support representative for assistance.</value>
+    </labels>
+    <labels>
+        <fullName>CPQB2B_CartToQuote_Modal_Cancel_Button_Text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQB2B CartToQuote Modal Cancel Button Text</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>CPQB2B_CartToQuote_Modal_Close_Button_Text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQB2B CartToQuote Modal Close Button Text</shortDescription>
+        <value>Close</value>
+    </labels>
+    <labels>
+        <fullName>CPQB2B_CartToQuote_Modal_Continue_Button_Text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQB2B CartToQuote Modal Continue Button Text</shortDescription>
+        <value>Continue</value>
+    </labels>
+    <labels>
+        <fullName>CPQB2B_CartToQuote_Modal_Submit_Button_Text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQB2B CartToQuote Modal Submit Button Text</shortDescription>
+        <value>Submit</value>
+    </labels>
+    <labels>
+        <fullName>CPQB2B_CartToQuote_Success_Modal_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQB2B CartToQuote Success Modal Title</shortDescription>
+        <value>Success</value>
+    </labels>
+    <labels>
+        <fullName>CPQB2B_CartToQuote_Success_Msg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQB2B CartToQuote Success Message</shortDescription>
+        <value>Thank you for requesting a quote, a representative will be contacting you shortly!</value>
+    </labels>
+    <labels>
+        <fullName>CPQB2B_CartToQuote_Warning_Modal_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQB2B CartToQuote Warning Modal Title</shortDescription>
+        <value>Warning!</value>
+    </labels>
+    <labels>
+        <fullName>CPQB2B_PriceBookEntry_Sync_No_CCPriceList_Exception</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQB2B_PriceBookEntry_Sync_No_CCPriceList_Exception</shortDescription>
+        <value>No CC Price List exists for the Pricebook of this PriceBookEntry. No CC Price List Item was created.</value>
+    </labels>
+    <labels>
+        <fullName>CPQB2B_QuoteLine_Sync_No_Account</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQB2B_QuoteLine_Sync_No_Account</shortDescription>
+        <value>No Account exists for the Quote. Syncing to CPQ was not completed.</value>
+    </labels>
+    <labels>
+        <fullName>CPQB2B_Request_A_Quote_Btn_Lbl</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQB2B Request a Quote Button Label</shortDescription>
+        <value>Request a Quote</value>
+    </labels>
+</CustomLabels>

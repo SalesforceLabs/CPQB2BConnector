@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <fields>
+        <fullName>B2B_Source_Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup relationship referencing the Source CC Order from B2B</description>
+        <externalId>false</externalId>
+        <label>B2B Source Order</label>
+        <referenceTo>ccrz__E_Order__c</referenceTo>
+        <relationshipLabel>Quotes</relationshipLabel>
+        <relationshipName>Quotes</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>B2B_Source__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup value referencing the associated CC Cart record.</description>
+        <externalId>false</externalId>
+        <label>B2B Source</label>
+        <referenceTo>ccrz__E_Cart__c</referenceTo>
+        <relationshipLabel>Carts</relationshipLabel>
+        <relationshipName>Cart</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Quote_Additional_Details__c</fullName>
+        <description>Optional details text field that can be filled at the time of requesting a quote.</description>
+        <externalId>false</externalId>
+        <label>B2B Requested Quote Additional Details</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Sync_Quote_To_B2B__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checkbox used to determine if the quote record will be synced to B2B. Set to true for a record to sync to B2B.</description>
+        <externalId>false</externalId>
+        <label>Update Customer Pricing</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+</CustomObject>

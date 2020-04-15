@@ -1,0 +1,11 @@
+<apex:page id="CPQB2BQuoteBtn" controller="CPQB2BQuoteBtnCtrl" applyHtmlTag="false" sidebar="false" showHeader="false" standardStylesheets="false" cache="false" >
+    <script type="text/javascript">
+        if ( self === top ) {
+            document.documentElement.style.display = 'block';
+        }
+        else {
+            top.location = self.location;
+        }
+    </script>
+    <c:CPQB2BCartToQuoteBtn />
+</apex:page>

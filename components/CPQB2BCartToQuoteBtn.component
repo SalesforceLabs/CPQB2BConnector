@@ -1,0 +1,155 @@
+<apex:component controller="CPQB2BQuoteBtnCtrl">
+    <html>
+        <head>
+            <style> html {display : none; } </style>
+            <script type="text/javascript">
+                if ( self === top ) {
+                    document.documentElement.style.display = 'block';
+                }
+                else {
+                    top.location = self.location;
+                }
+
+                window.$Label = window.$Label || {};
+                $Label.ErrorMsg = '{!JSENCODE($Label.CPQB2B_CartToQuote_Error_Msg)}';
+                $Label.SuccessMsg = '{!JSENCODE($Label.CPQB2B_CartToQuote_Success_Msg)}';
+                $Label.ConfirmMsg = '{!JSENCODE($Label.CPQB2B_CartToQuote_Confirm_Msg)}';
+                $Label.AddDetailsMsg = '{!JSENCODE($Label.CPQB2B_CartToQuote_Additional_Details_Msg)}';
+                $Label.WarnModalTitle = '{!JSENCODE($Label.CPQB2B_CartToQuote_Warning_Modal_Title)}';
+                $Label.DetailsModalTitle = '{!JSENCODE($Label.CPQB2B_CartToQuote_Details_Modal_Title)}';
+                $Label.ErrorModalTitle = '{!JSENCODE($Label.CPQB2B_CartToQuote_Error_Modal_Title)}';
+                $Label.SuccessModalTitle = '{!JSENCODE($Label.CPQB2B_CartToQuote_Success_Modal_Title)}';
+
+                var errorFunction = function(){
+                    $(".modal-header #resultModalLabel").text($Label.ErrorModalTitle);
+                    $("#resultModal .modal-body").text($Label.ErrorMsg);
+                }
+                var successFunction = function(resp){
+                    $(".modal-header #resultModalLabel").text($Label.SuccessModalTitle);
+                    $("#resultModal .modal-body").text($Label.SuccessMsg);
+                }
+
+                function mapCartToQuote(){
+                    $('#raqButton').button('loading')
+                    // remote invoke the function set in the controller
+                    CCRZ.subsc = CCRZ.subsc||{};
+                    CCRZ.subsc.myOrgCustomCall = _.extend({
+                        className: "CPQB2BQuoteBtnCtrl",
+                        cartToQuote: function(){
+                            this.invokeCtx('submitQuoteRequest',
+                            $('textarea#quoteDetails').val(),
+                            function(resp,evt){
+                                // callback function
+                                if(evt.status){
+                                    openResultsModal();
+                                    if(resp && resp.success){
+                                        successFunction(resp); //success
+                                    }else{
+                                        errorFunction(); //error
+                                    }
+                                }
+                            },
+                            {
+                                buffer:false, //this call will be executed by itself
+                                nmsp : false //defines that this is a call to a subscriber class
+                            }
+                        ); //end invokeCtx block
+                    } //end getCustomFields function block
+                    },CCRZ.RemoteInvocation); //end subscription block
+                    CCRZ.subsc.myOrgCustomCall.cartToQuote(); //calls the function above
+                }
+
+                function openWarningModal(){
+                    $("#warningModal .modal-body").text($Label.ConfirmMsg);
+                    $("#warningModal .modal-title").text($Label.WarnModalTitle);
+                    $('#warningModal').modal('show');
+                }
+
+                function openDetailsModal(){
+                    $('#warningModal').modal('hide');
+                    $("#quoteDetailsModal .modal-title").text($Label.DetailsModalTitle);
+                    $("#quoteDetailsModal .details-field-description").text($Label.AddDetailsMsg);
+                    $('#quoteDetailsModal').modal('show');
+                }
+
+                function openResultsModal(){
+                    $('#raqButton').button('reset');
+                    $('#quoteDetailsModal').modal('hide');
+                    $('#resultModal').modal('show');
+                }
+                
+                function refreshPage(){
+                    var url = "{!JSENCODE($Site.BaseUrl)}/";
+                    window.location.href=url;
+                }
+            </script>
+        </head>
+    
+        <body>
+            <button type="button" onclick="openWarningModal()" id="confirmButton" class="btn btn-primary btn-lg">
+                {!$Label.CPQB2B_Request_A_Quote_Btn_Lbl}
+            </button>
+    
+            <!-- Quote Details Modal -->
+            <div class="modal fade" id="quoteDetailsModal" tabindex="-1" role="dialog" aria-labelledby="quoteDetailsLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="quoteDetailsLabel"></h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="details-field-description">
+                            </div>
+                            <form>
+                                <div class="form-group">
+                                    <label for="additionalDetailsField">{!$Label.CPQB2B_CartToQuote_Additional_Details_TextArea_Label}</label>
+                                    <textarea class="form-control" id="quoteDetails" rows="3"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="raqButton" class="btn btn-primary" onclick="mapCartToQuote()" data-loading-text="Loading...">{!$Label.CPQB2B_CartToQuote_Modal_Submit_Button_Text}</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">{!$Label.CPQB2B_CartToQuote_Modal_Cancel_Button_Text}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        <!-- SUCCESS/ERRROR Results Modal -->
+        <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="resultModalLabel"></h4>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-default" onclick="refreshPage()">{!$Label.CPQB2B_CartToQuote_Modal_Close_Button_Text}</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    
+            <!-- Warning Modal -->
+            <div class="modal fade" id="warningModal" tabindex="-1" role="dialog" aria-labelledby="warningModalLabel">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="warningModalLabel"></h4>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="continueButton" class="btn btn-primary" onclick="openDetailsModal()" data-loading-text="Loading...">{!$Label.CPQB2B_CartToQuote_Modal_Continue_Button_Text}</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">{!$Label.CPQB2B_CartToQuote_Modal_Cancel_Button_Text}</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </body>
+    </html>
+</apex:component>

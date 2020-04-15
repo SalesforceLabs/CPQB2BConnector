@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <fields>
+        <fullName>Source_Price_Book__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup field referencing the source PriceBook.</description>
+        <externalId>false</externalId>
+        <label>Source Price Book</label>
+        <referenceTo>Pricebook2</referenceTo>
+        <relationshipLabel>CC Price Lists</relationshipLabel>
+        <relationshipName>CC_Price_Lists</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+</CustomObject>

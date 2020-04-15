@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Defines the custom mapping fields for the CPQ B2B Connector (used in addition to the standard fields)</description>
+    <fields>
+        <fullName>Destination_Field__c</fullName>
+        <description>The Destination Field</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The Destination Field</inlineHelpText>
+        <label>Destination Field</label>
+        <metadataRelationshipControllingField>CPQ_B2B_Mapping__mdt.Destination_Object__c</metadataRelationshipControllingField>
+        <referenceTo>FieldDefinition</referenceTo>
+        <relationshipLabel>CPQ_B2B_Mappings1</relationshipLabel>
+        <relationshipName>CPQ_B2B_Mappings1</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Destination_Object__c</fullName>
+        <description>The Destination Object</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The Destination Object</inlineHelpText>
+        <label>Destination Object</label>
+        <referenceTo>EntityDefinition</referenceTo>
+        <relationshipLabel>CPQ_B2B_Mappings1</relationshipLabel>
+        <relationshipName>CPQ_B2B_Mappings1</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Field_Mapping_Service_Class__c</fullName>
+        <description>If this field is populated, the Connector will call this class to obtain the field mapping value</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>If this field is populated, the Connector will call this class to obtain the field mapping value</inlineHelpText>
+        <label>Field Mapping Service Class</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Process__c</fullName>
+        <description>The Connector process that uses the mapping records</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The Connector process that uses the mapping records</inlineHelpText>
+        <label>Process</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>SKU</fullName>
+                    <default>true</default>
+                    <label>SKU</label>
+                </value>
+                <value>
+                    <fullName>Pricing</fullName>
+                    <default>false</default>
+                    <label>Pricing</label>
+                </value>
+                <value>
+                    <fullName>CartToQuote</fullName>
+                    <default>false</default>
+                    <label>Cart To Quote</label>
+                </value>
+                <value>
+                    <fullName>CCOrderToOrder</fullName>
+                    <default>false</default>
+                    <label>CC Order To Order</label>
+                </value>
+                <value>
+                    <fullName>OrderToCCOrder</fullName>
+                    <default>false</default>
+                    <label>CPQ Order to CC Order</label>
+                </value>
+                <value>
+                    <fullName>Test</fullName>
+                    <default>false</default>
+                    <label>Test</label>
+                </value>
+                <value>
+                    <fullName>OrdertToCCOrder</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Order to CC Order</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Source_Field__c</fullName>
+        <description>The Source Field</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The Source Field</inlineHelpText>
+        <label>Source Field</label>
+        <metadataRelationshipControllingField>CPQ_B2B_Mapping__mdt.Source_Object__c</metadataRelationshipControllingField>
+        <referenceTo>FieldDefinition</referenceTo>
+        <relationshipLabel>CPQ_B2B_Mappings</relationshipLabel>
+        <relationshipName>CPQ_B2B_Mappings</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Source_Object__c</fullName>
+        <description>The Source Object</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The Source Object</inlineHelpText>
+        <label>Source Object</label>
+        <referenceTo>EntityDefinition</referenceTo>
+        <relationshipLabel>CPQ_B2B_Mappings</relationshipLabel>
+        <relationshipName>CPQ_B2B_Mappings</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Source_Value__c</fullName>
+        <description>This field is used for setting a field on a destination object to a static text value.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>When this is populated, a static text value can be set on the destination object. This is good for setting default picklist values.</inlineHelpText>
+        <label>Source Value</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CPQ B2B Mapping</label>
+    <pluralLabel>CPQ B2B Mappings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>
