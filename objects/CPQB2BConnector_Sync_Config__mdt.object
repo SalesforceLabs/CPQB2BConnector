@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Configuration Settings for the CPQ-B2B Connector</description>
+    <fields>
+        <fullName>Enabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If Enabled, the Connector Sync process is active</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>If Enabled, the Connector Sync process is active</inlineHelpText>
+        <label>Enabled</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Process__c</fullName>
+        <description>The available Connector processes</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>The available Connector processes</inlineHelpText>
+        <label>Process</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>SKU</fullName>
+                    <default>true</default>
+                    <label>SKU</label>
+                </value>
+                <value>
+                    <fullName>Pricing</fullName>
+                    <default>false</default>
+                    <label>Pricing</label>
+                </value>
+                <value>
+                    <fullName>CartToQuote</fullName>
+                    <default>false</default>
+                    <label>CartToQuote</label>
+                </value>
+                <value>
+                    <fullName>CCOrderToOrder</fullName>
+                    <default>false</default>
+                    <label>CCOrderToOrder</label>
+                </value>
+                <value>
+                    <fullName>OrderToCCOrder</fullName>
+                    <default>false</default>
+                    <label>OrderToCCOrder</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Connector Sync Config</label>
+    <pluralLabel>Connetor Sync Configs</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <fields>
+        <fullName>Source_Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup field referencing the source CPQ Product2 record.</description>
+        <externalId>false</externalId>
+        <label>Source Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>CC Source Products</relationshipLabel>
+        <relationshipName>CC_Source_Products</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+</CustomObject>

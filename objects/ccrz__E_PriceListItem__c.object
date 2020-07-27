@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <fields>
+        <fullName>Contracted_Price__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contracted Price</label>
+        <referenceTo>SBQQ__ContractedPrice__c</referenceTo>
+        <relationshipLabel>CC Price List Items</relationshipLabel>
+        <relationshipName>CC_Price_List_Items</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Quote_Line__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Quote Line</label>
+        <referenceTo>SBQQ__QuoteLine__c</referenceTo>
+        <relationshipLabel>CC Price List Items</relationshipLabel>
+        <relationshipName>CC_Price_List_Items</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Source_PriceBookEntry_Id__c</fullName>
+        <description>This is the id for the PriceBookEntry Id, stored here due to the inability to create a look up to PriceBookEntry</description>
+        <externalId>true</externalId>
+        <label>PriceBookEntry Id</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Source_PriceBookEntry__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Source_PriceBookEntry_Id__c  &lt;&gt; null , HYPERLINK(&quot;/lightning/r/PricebookEntry/&quot; &amp;  Source_PriceBookEntry_Id__c  &amp; &quot;/view&quot;, &quot;View&quot;), null)</formula>
+        <label>Price Book Entry</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

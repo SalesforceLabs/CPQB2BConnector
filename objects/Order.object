@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>B2B_Source_Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup relationship referencing the Source CC Order from B2B</description>
+        <externalId>false</externalId>
+        <label>B2B Source Order</label>
+        <referenceTo>ccrz__E_Order__c</referenceTo>
+        <relationshipLabel>Orders</relationshipLabel>
+        <relationshipName>Orders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sync_to_B2B__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checkbox used to determine if the record will be synced to B2B. Set to true for a record to sync to B2B.</description>
+        <externalId>false</externalId>
+        <label>Sync to B2B Orders</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+</CustomObject>
